@@ -46,5 +46,4 @@ class PersonasControl extends Controller
         $personas->delete();
         return redirect()->route('personas.index');
     }
-
 }

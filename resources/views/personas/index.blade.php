@@ -19,6 +19,7 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Fecha Nacimiento</th>
                     <th scope="col">Sexo</th>
+                    <th scope="col">Edad</th>
                     <th scope="col">Actualizar</th>
                     <th scope="col">Eliminar</th>
                 </tr>
@@ -32,6 +33,13 @@
                     <th>{{$personas->nombre}}</th>
                     <th>{{$personas->fecha_nacimiento}}</th>
                     <th>{{$personas->sexo}}</th>
+                    <th><?php
+                        $fecha_nacimiento = new DateTime($personas['fecha_nacimiento']);
+                        $hoy = new DateTime();
+                        $edad = $hoy->diff($fecha_nacimiento);
+                        echo $edad->y;
+                        ?>
+                    </th>
                     <th>
                         <!-- BOTON PARA ACTUALIZAR -->
                         <button type="button" class="btn btn-warning">
